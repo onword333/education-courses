@@ -38,3 +38,9 @@ EXTRACT - извлекает год, месяц, день, секунды и т.
     
     Результат:
     264092
+
+ARRAY_AGG - продвинутая агрегирующая функция, которая собирает все значения в указанном столбце в единый список (ARRAY). По сути array_agg — это операция, обратная unnest
+
+    SELECT column_1, array_agg(column_2) AS new_array
+    FROM table
+    GROUP BY column_1
