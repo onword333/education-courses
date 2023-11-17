@@ -44,3 +44,5 @@ ARRAY_AGG - продвинутая агрегирующая функция, ко
     SELECT column_1, array_agg(column_2) AS new_array
     FROM table
     GROUP BY column_1
+
+STRING_TO_ARRAY() - разделяет строку на элементы массива, можно передать разделитель, [пример](./sql-karpov/1_8.md#задание-20)
