@@ -40,3 +40,20 @@
         DENSE
       )
     )
+
+### Доходность в %
+Вычисляет долю доходности в %, используется REMOVEFILTERS для сброса контекста фильтра (позволяет получить общий доход)
+
+    Revenue % Total Region =
+    VAR CurrentRegionRevenue = [Revenue]
+    VAR TotalRegionRevenue =
+      CALCULATE (
+        [Revenue],
+        REMOVEFILTERS ( 'Sales Territory' )
+      )
+    RETURN
+      DIVIDE (
+        CurrentRegionRevenue,
+        TotalRegionRevenue
+      )
+![доля доходности в %](./img/dax-matrix-sales-territory-revenue-2-ss.png)
