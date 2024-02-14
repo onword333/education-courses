@@ -26,3 +26,17 @@
         (SUM(Sales[Sales]) - sales_prev_year),
         sales_prev_year
       )
+### Ранжирование по колонке
+Ранжирование по кол-ву, используем так называемое "плотное ранжирование" - указан DENSE (исключает пропуски)
+
+    Product Quantity Rank =
+    IF(
+      HASONEVALUE('Product'[Product]),
+      RANKX(
+        ALL('Product'[Product]),
+        [Quantity],
+        ,
+        ,
+        DENSE
+      )
+    )
