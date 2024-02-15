@@ -66,3 +66,33 @@
 В power query (pq) сделать таблицу простую, столбец неважно, доб. настр. столбец с формулой: 
 
     DateTime.LocalNow()
+
+### Новые пользователи
+Мера вычисляет прирост новых пользователей по сравнению с предущим периодом
+
+    New Customers = 
+    VAR CustomersLTD =
+        CALCULATE(
+            DISTINCTCOUNT(Sales[CustomerKey]),
+            DATESBETWEEN(
+                'Date'[Date],
+                BLANK(),
+                MAX('Date'[Date])
+            ),
+            'Sales Order'[Channel] = "Internet"
+        )
+    
+    VAR CustomersPrior =
+        CALCULATE(
+            DISTINCTCOUNT(Sales[CustomerKey]),
+            DATESBETWEEN(
+                'Date'[Date],
+                BLANK(),
+                MIN('Date'[Date]) - 1
+            ),
+            'Sales Order'[Channel] = "Internet"
+        )
+    RETURN
+        CustomersLTD - CustomersPrior
+
+![новые пользователи](./img/new_usesrs.jpg)
