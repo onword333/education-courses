@@ -7,6 +7,9 @@
 3. [Методы уменьшения объема данных для моделирования импорта.](https://learn.microsoft.com/ru-ru/power-bi/guidance/import-modeling-data-reduction/)
 4. Тип данных "дата и время" рекомендуется разбить на две колонки либо оставить только одну с датой
 5. Отключить настройку "применение автоматической даты и времени". В этом случае нужно позаботиться о таблице "календарь" и исправить все фильтры по датам с которые были построены на автоматической дате и времени. [Подробнее о функции](https://learn.microsoft.com/ru-ru/power-bi/transform-model/desktop-auto-date-time/)
+6. Типом данных Integer (целое число) обрабатываются лучше, чем столбцы с типом данных Text (текст).
+7. [Оптимизация модели DirectQuery с хранилищем на уровне таблиц](https://learn.microsoft.com/ru-ru/power-bi/guidance/directquery-model-guidance/), [Ограничения использования DirectQuery](https://learn.microsoft.com/ru-ru/power-bi/connect-data/desktop-directquery-about#implications-of-using-directquery) и [Рекомендации по успешному использованию DirectQuery](https://learn.microsoft.com/ru-ru/power-bi/connect-data/desktop-directquery-about#guidance-for-using-directquery-successfully/?azure-portal=true)
+8. Использовать агрегаты в семантической модели, чтобы уменьшить размер файла данных и увеличить производительность
 
 ## Вопросы к данным
 Вычисления логики операций со временем могут помочь ответить на следующие вопросы, связанные со временем:
