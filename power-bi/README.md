@@ -11,6 +11,14 @@
 7. [Оптимизация модели DirectQuery с хранилищем на уровне таблиц](https://learn.microsoft.com/ru-ru/power-bi/guidance/directquery-model-guidance/), [Ограничения использования DirectQuery](https://learn.microsoft.com/ru-ru/power-bi/connect-data/desktop-directquery-about#implications-of-using-directquery) и [Рекомендации по успешному использованию DirectQuery](https://learn.microsoft.com/ru-ru/power-bi/connect-data/desktop-directquery-about#guidance-for-using-directquery-successfully/?azure-portal=true)
 8. Использовать агрегаты в семантической модели, чтобы уменьшить размер файла данных и увеличить производительность. Например: выполнить агрегирование данных о продажах на уровне дня.
 
+### Соглашения по синтаксису
+- меры пишем через ":="
+
+        Sales Amount := SUMX ( Sales; Sales[Quantity] * Sales[Net Price] )
+- обращение к колонкам таблицы по полному пути Sales[Quantity]
+- вызов меры без названия таблицы
+
+
 ## Вопросы к данным
 Вычисления логики операций со временем могут помочь ответить на следующие вопросы, связанные со временем:
 
