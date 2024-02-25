@@ -152,3 +152,17 @@ USERELATIONSHIP - позволяет активировать неактивну
         SUM('Sales'[Sales Amount]),
         USERELATIONSHIP('Date'[DateKey], 'Sale'[ShipDateKey])
     )
+
+### Получить значение по связи 
+RELATEDTABLE - если нужно обратиться по связи со стороны "один" к стороне "«многие" (в этом случае значений будет несколько)
+
+    'Product Category'[NumOfProducts] = COUNTROWS ( RELATEDTABLE ( Product ) )
+
+RELATED - обеспечивает доступ по связи со стороны "многие" к стороне "один", поскольку в этом случае у нас будет максимум одна целевая строка
+
+    Sales[AdjustedCost] =
+    IF (
+        RELATED ( 'Product Category'[Category] ) = "Cell Phone";
+        Sales[Unit Cost] * 0,95;
+        Sales[Unit Cost]
+    )
