@@ -231,3 +231,7 @@ HASONEVALUE - проверяет столбец на единственное в
         HASONEVALUE ( 'Product'[Brand] );
         VALUES ( 'Product'[Brand] )
     )
+
+SELECTEDVALUE - автоматически проверяет столбец на единственное значение и возвращающает его в виде скалярной величины. Для множественных вхождений допустимо задать в функции значение по умолчанию
+
+    Brand Name := SELECTEDVALUE ( 'Product'[Brand]; "Multiple brands" )
