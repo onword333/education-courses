@@ -235,3 +235,13 @@ HASONEVALUE - проверяет столбец на единственное в
 SELECTEDVALUE - автоматически проверяет столбец на единственное значение и возвращающает его в виде скалярной величины. Для множественных вхождений допустимо задать в функции значение по умолчанию
 
     Brand Name := SELECTEDVALUE ( 'Product'[Brand]; "Multiple brands" )
+
+CONCATENATEX - умеет собирать в строку значения колонки (по факту конкатенация значчений в одну строку)
+
+    [Brand Name] :=
+        CONCATENATEX (
+            VALUES ( 'Product'[Brand] );
+            'Product'[Brand];
+            ", "
+        )
+![CONCATENATEX](./img/3_16.jpg)
