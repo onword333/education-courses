@@ -10,6 +10,7 @@
 6. Типом данных Integer (целое число) обрабатываются лучше, чем столбцы с типом данных Text (текст).
 7. [Оптимизация модели DirectQuery с хранилищем на уровне таблиц](https://learn.microsoft.com/ru-ru/power-bi/guidance/directquery-model-guidance/), [Ограничения использования DirectQuery](https://learn.microsoft.com/ru-ru/power-bi/connect-data/desktop-directquery-about#implications-of-using-directquery) и [Рекомендации по успешному использованию DirectQuery](https://learn.microsoft.com/ru-ru/power-bi/connect-data/desktop-directquery-about#guidance-for-using-directquery-successfully/?azure-portal=true)
 8. Использовать агрегаты в семантической модели, чтобы уменьшить размер файла данных и увеличить производительность. Например: выполнить агрегирование данных о продажах на уровне дня.
+9. Двунаправленную фильтрацию использовать только в крайней необходимости, и лучше это делать через в мере через CROSSFILTER
 
 ### Соглашения по синтаксису
 - меры пишем через ":="
