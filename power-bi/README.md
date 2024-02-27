@@ -81,6 +81,33 @@
       )
 ![доля доходности в %](./img/dax-matrix-sales-territory-revenue-2-ss.png)
 
+### Средний возраст покупателей
+
+Вычисляемый столбец:
+
+    Sales[Customer Age] = 
+    DATEDIFF(
+        RELATED(Customer[Birth Date]),
+        Sales[Order Date],
+        YEAR
+    )
+
+Мера:
+
+    Age Average Correct := 
+    VAR tab = 
+        SUMMARIZE(
+            Sales,
+            Sales[CustomerKey],
+            Sales[Customer Age]
+        )
+    
+    RETURN
+        AVERAGEX(
+            tab,
+            Sales[Customer Age]
+        )
+
 ### Вывод даты последнего обновления
 В power query (pq) сделать таблицу простую, столбец неважно, доб. настр. столбец с формулой: 
 
