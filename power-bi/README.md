@@ -237,6 +237,21 @@
 
 ![скользящее среднее](./img/7_8.jpg)
 
+### Нарастающий итог
+    -- вариант 1
+    Sales Amount YTD :=
+        CALCULATE (
+            SUMX ( Sales; Sales[Net Price] * Sales[Quantity] );
+            DATESYTD ( 'Date'[Date] )
+    )
+
+    -- вариант 2
+    Sales Amount YTD = 
+        TOTALYTD(
+            [Sales Amount],  -- мера
+            'Date'[Date]
+        )
+        
 ### Удаление фильтров с таблицы
 С помощью ALL можно снять все фильтры которые существуют в CALCULATE, таким образом мы снимаем влияние на расчеты всех таблицы которые могут повлиять на это:
 
