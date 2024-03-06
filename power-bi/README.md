@@ -282,7 +282,7 @@
         CALCULATE (
             SUMX ( Sales; Sales[Net Price] * Sales[Quantity] );
             DATESYTD ( 'Date'[Date] )
-    )
+        )
 
     -- вариант 2
     Sales Amount YTD = 
@@ -330,6 +330,32 @@
         (SUM(Sales[Sales]) - sales_prev_year),
         sales_prev_year
       )
+
+### Расчет цен на начало квартала
+    SOQ v2 = 
+        VAR FirstDateInQ =
+            CALCULATETABLE(
+                FIRSTNONBLANK(
+                    'Date'[Date],
+                    COUNTROWS(RELATEDTABLE(MSFT))
+                ),
+                PARALLELPERIOD(
+                    'Date'[Date],
+                    0,
+                    QUARTER
+                )
+            )
+
+        VAR res = 
+            CALCULATE(
+                AVERAGE(MSFT[Value]),
+                FirstDateInQ
+            )
+
+        RETURN res
+
+![цена на начало квартала](./img/8_32.jpg)
+
 ### Ранжирование по колонке
 Ранжирование по кол-ву, используем так называемое "плотное ранжирование" - указан DENSE (исключает пропуски)
 
