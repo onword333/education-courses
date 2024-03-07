@@ -322,6 +322,30 @@
     )
 
 
+### Шаблон создания таблицы календаря
+    Date = 
+        VAR MinYear = YEAR ( MIN ( Sales[Order Date] ) )
+        VAR MaxYear = YEAR ( MAX ( Sales[Order Date] ) )
+        RETURN
+            ADDCOLUMNS (
+                FILTER (
+                    CALENDARAUTO ( ),
+                    YEAR ( [Date] ) >= MinYear &&
+                    YEAR ( [Date] ) <= MaxYear
+                ),
+                "Year", YEAR ( [Date] ),
+                "Quarter Number", INT ( FORMAT ( [Date], "q" ) ),
+                "Quarter", "Q" & INT ( FORMAT ( [Date], "q" ) ),
+                "Month Number", MONTH ( [Date] ),
+                "Month", FORMAT ( [Date], "mmmm" ),
+                "Week Day Number", WEEKDAY ( [Date] ),
+                "Week Day", FORMAT ( [Date], "dddd" ),
+                "Year Month Number", YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+                "Year Month", FORMAT ( [Date], "mmmm" ) & " " & YEAR ( [Date] ),
+                "Year Quarter Number", YEAR ( [Date] ) * 100 + INT ( FORMAT ( [Date], "q" ) ),
+                "Year Quarter", "Q" & FORMAT ( [Date], "q" ) & "-" & YEAR ( [Date] )
+            )
+
 ### Продажи с накоплением
     Sales YTD = TOTALYTD(SUM(Sales[Sales]), 'Date'[Date], "6-30")
 
