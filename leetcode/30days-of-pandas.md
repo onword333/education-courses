@@ -26,3 +26,41 @@ def game_analysis(activity: pd.DataFrame) -> pd.DataFrame:
     .rename(columns={'event_date': 'first_login'})
   return res
 ```
+
+## 2356. Number of Unique Subjects Taught by Each Teacher
+
+```python
+import pandas as pd
+
+def count_unique_subjects(teacher: pd.DataFrame) -> pd.DataFrame:
+    return teacher[['teacher_id', 'subject_id']]\
+      .groupby(['teacher_id'], as_index=False)\
+      .nunique()\
+      .rename(columns={'subject_id':'cnt'})
+```
+
+## 596. Classes More Than 5 Students
+
+```python
+import pandas as pd
+
+def find_classes(courses: pd.DataFrame) -> pd.DataFrame:
+    res = courses.groupby(['class'], as_index=False)\
+        .nunique()        
+
+    return res[res['student'] > 4][['class']]
+```
+
+## 586. Customer Placing the Largest Number of Orders
+
+```python
+import pandas as pd
+
+def largest_orders(orders: pd.DataFrame) -> pd.DataFrame:
+    res = orders\
+      .groupby(['customer_number'], as_index=False)\
+      .nunique()\
+      .sort_values(by='order_number', ascending=False)
+    
+    return res[0:1][['customer_number']]
+```

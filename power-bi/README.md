@@ -291,6 +291,18 @@
             'Date'[Date]
         )
 
+    -- DATESYTD ( 'Date'[Date] ), эту функцию в 
+    -- расширенном виде можно переписать так
+    CALCULATETABLE (
+        VAR LastDateInSelection = MAX ( 'Date'[Date] )
+        RETURN
+            FILTER (
+                ALL ( 'Date'[Date] );
+                'Date'[Date] <= LastDateInSelection
+                && YEAR ( 'Date'[Date] ) = YEAR ( LastDateInSelection )
+            )
+    )
+
 ### Удаление фильтров с таблицы
 С помощью ALL можно снять все фильтры которые существуют в CALCULATE, таким образом мы снимаем влияние на расчеты всех таблицы которые могут повлиять на это:
 
