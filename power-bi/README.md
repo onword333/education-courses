@@ -346,6 +346,36 @@
                 "Year Quarter", "Q" & FORMAT ( [Date], "q" ) & "-" & YEAR ( [Date] )
             )
 
+### Получить выбранные значения в контексте фильтра
+Можно вывести значения которые возвращаются с учетом применения контекста фильтра. Например, ниже мера соединяет значения в строку:
+
+    -- #1
+    -- смотрим какие значения попали в выбранный период
+    Selected date = 
+        "Selected date: " & 
+            CONCATENATEX(
+                VALUES('Date'[Date]),
+                'Date'[Date],
+                ", ",
+                'Date'[Date],
+                ASC
+            )
+
+    -- # 2
+    -- если нужно посмотреть какие значения возвращает
+    -- DATEADD в контексте фильта (в виз. элементе)
+    Selected date = 
+        "Selected date: " & 
+        CONCATENATEX(
+            DATEADD ( 'Date'[Date], -1, MONTH ),
+            'Date'[Date],
+            ", ",
+            'Date'[Date],
+            ASC
+        )
+
+![выбранные значения](./img/_concatenatex.jpg)
+
 ### Продажи с накоплением
     Sales YTD = TOTALYTD(SUM(Sales[Sales]), 'Date'[Date], "6-30")
 
