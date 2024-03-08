@@ -120,3 +120,31 @@ def replace_employee_id(employees: pd.DataFrame, employee_uni: pd.DataFrame) -> 
     .drop(columns=['id'])    
   return df_merge
 ```
+
+## 1280. Students and Examinations
+```python
+import pandas as pd
+
+def students_and_examinations(students: pd.DataFrame, subjects: pd.DataFrame, examinations: pd.DataFrame) -> pd.DataFrame:
+    
+  examinations.rename(columns={'subject_name': 'attended_exams'}, inplace=True)    
+
+  exam = students.merge(subjects, how='cross')\
+    .merge(
+      examinations, 
+      how='left', 
+      left_on=['student_id', 'subject_name'], 
+      right_on=['student_id', 'attended_exams']
+    )    
+
+  pivot = exam\
+    .groupby(
+      ['student_id', 'student_name', 'subject_name'], 
+      as_index=False, 
+      dropna=False)\
+    .agg({'attended_exams': 'count'})
+  
+  if 'attended_exams' not in pivot.columns:
+    pivot['attended_exams'] = np.nan
+  return pivot
+```
