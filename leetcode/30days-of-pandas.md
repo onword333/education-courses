@@ -64,3 +64,19 @@ def largest_orders(orders: pd.DataFrame) -> pd.DataFrame:
     
     return res[0:1][['customer_number']]
 ```
+
+## 1484. Group Sold Products By The Date
+
+```python
+import pandas as pd
+
+def categorize_products(activities: pd.DataFrame) -> pd.DataFrame:
+  df = activities.groupby('sell_date')['product']\
+    .agg([
+        ('num_sold', 'nunique'),
+        ('product', lambda x: ','.join(sorted(set(x))))            
+    ])\
+    .reset_index()\
+    .rename(columns={'product': 'products'})
+  return df
+```
