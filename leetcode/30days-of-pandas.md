@@ -80,3 +80,16 @@ def categorize_products(activities: pd.DataFrame) -> pd.DataFrame:
     .rename(columns={'product': 'products'})
   return df
 ```
+
+## 1693. Daily Leads and Partners
+```python
+import pandas as pd
+
+def daily_leads_and_partners(daily_sales: pd.DataFrame) -> pd.DataFrame:
+  res = daily_sales.groupby(['date_id', 'make_name'], as_index=False)\
+    .agg(
+      unique_leads = ('lead_id', 'nunique'),
+      unique_partners = ('partner_id', 'nunique')
+    )
+  return res
+```
