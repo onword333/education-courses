@@ -93,3 +93,19 @@ def daily_leads_and_partners(daily_sales: pd.DataFrame) -> pd.DataFrame:
     )
   return res
 ```
+
+## 1050. Actors and Directors Who Cooperated At Least 
+
+```python
+import pandas as pd
+
+def actors_and_directors(actor_director: pd.DataFrame) -> pd.DataFrame:
+  df = actor_director
+  df['_count'] = 1
+  pivot = df.pivot_table(
+      values='_count', 
+      index=['actor_id', 'director_id'], 
+      aggfunc={'_count': 'sum'}
+    ).reset_index()
+  return pivot.query('_count >= 3')[['actor_id', 'director_id']]
+```
