@@ -148,3 +148,16 @@ def students_and_examinations(students: pd.DataFrame, subjects: pd.DataFrame, ex
     pivot['attended_exams'] = np.nan
   return pivot
 ```
+
+## 570. Managers with at Least 5 Direct Reports
+```python
+import pandas as pd
+
+def find_managers(employee: pd.DataFrame) -> pd.DataFrame:
+  count_employee = employee\
+    .groupby(['managerId'], as_index=False)\
+    .agg(count_emp=('id', 'count'))    
+
+  min_5_empl = count_employee.query('count_emp > 4')['managerId']    
+  return employee.query('id in @min_5_empl')[['name']]
+```
