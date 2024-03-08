@@ -109,3 +109,14 @@ def actors_and_directors(actor_director: pd.DataFrame) -> pd.DataFrame:
     ).reset_index()
   return pivot.query('_count >= 3')[['actor_id', 'director_id']]
 ```
+
+## 1378. Replace Employee ID With The Unique Identifier
+
+```python
+import pandas as pd
+
+def replace_employee_id(employees: pd.DataFrame, employee_uni: pd.DataFrame) -> pd.DataFrame:
+  df_merge = employees.merge(employee_uni, how='left', on='id')\
+    .drop(columns=['id'])    
+  return df_merge
+```
