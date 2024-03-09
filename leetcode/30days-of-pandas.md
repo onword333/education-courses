@@ -1,5 +1,14 @@
 # 30 days of pandas
 
+## 196. Delete Duplicate Emails
+```python
+import pandas as pd
+
+def delete_duplicate_emails(person: pd.DataFrame) -> None:
+    person.sort_values(by='id', ascending=True, inplace=True)
+    person.drop_duplicates(subset='email', keep='first', inplace=True)
+```
+
 ## 1795. Rearrange Products Table
 ```python
 import pandas as pd
