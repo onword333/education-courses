@@ -1,5 +1,16 @@
 # 30 days of pandas
 
+## 1517. Find Users With Valid E-Mails
+```python
+import pandas as pd
+
+def valid_emails(users: pd.DataFrame) -> pd.DataFrame:
+  df = users[users.mail.str\
+    .contains('^([a-zA-Z])([a-zA-Z0-9\._\-]+)?@leetcode\.com$', regex=True, na=False)]
+  return df.sort_values(by='user_id')
+    
+```
+
 ## 1527. Patients With a Condition
 ```python
 import pandas as pd
