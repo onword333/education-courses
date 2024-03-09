@@ -1,5 +1,20 @@
 # 30 days of pandas
 
+## 176. Second Highest Salary
+```python
+import pandas as pd
+
+def second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:
+  uniq_rows = employee[['salary']].drop_duplicates()
+  res_sort = uniq_rows.sort_values(by="salary", ascending=False)
+  res = pd.DataFrame([np.NaN], columns=["salary"])
+  
+  if len(res_sort) >= 2:
+      res = res_sort[1:2]
+
+  return res.rename(columns={'salary': 'SecondHighestSalary'})[['SecondHighestSalary']]
+```
+
 ## 184. Department Highest Salary
 ```python
 import pandas as pd
