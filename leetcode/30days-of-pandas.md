@@ -1,5 +1,19 @@
 # 30 days of pandas
 
+## 178. Rank Scores
+```python
+import pandas as pd
+
+def order_scores(scores: pd.DataFrame) -> pd.DataFrame:
+  scores['rank'] = scores['score'].rank(method='dense', ascending=False)
+
+  res = scores[['score', 'rank']]\
+    .astype({'rank':'int', 'score': 'float'})\
+    .sort_values(by='rank', ascending=True)    
+
+  return res
+```
+
 ## 196. Delete Duplicate Emails
 ```python
 import pandas as pd
