@@ -1,15 +1,24 @@
 # 30 days of pandas
 
+## 183. Customers Who Never Order
+```python
+import pandas as pd
+
+def find_customers(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:    
+  df = customers.query('id not in @orders["customerId"]')    
+  return df[['name']].rename(columns={'name': 'Customers'})
+```
+
 ## 1148. Article Views I
 ```python
 import pandas as pd
 
 def article_views(views: pd.DataFrame) -> pd.DataFrame:
-    df = views.query('author_id == viewer_id')    
-    return df[['author_id']]\
-      .drop_duplicates()\
-      .rename(columns={'author_id': 'id'})\
-      .sort_values(by='id', ascending=True)
+  df = views.query('author_id == viewer_id')    
+  return df[['author_id']]\
+    .drop_duplicates()\
+    .rename(columns={'author_id': 'id'})\
+    .sort_values(by='id', ascending=True)
 ```
 
 ## 1683. Invalid Tweets
