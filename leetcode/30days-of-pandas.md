@@ -1,5 +1,17 @@
 # 30 days of pandas
 
+## 1795. Rearrange Products Table
+```python
+import pandas as pd
+
+def rearrange_products_table(products: pd.DataFrame) -> pd.DataFrame:
+  res = products.melt(
+    id_vars=["product_id"], 
+    var_name="store", 
+    value_name="price").dropna()  
+  return res
+```
+
 ## 1907. Count Salary Categories
 ```python
 import pandas as pd
