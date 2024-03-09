@@ -161,3 +161,19 @@ def find_managers(employee: pd.DataFrame) -> pd.DataFrame:
   min_5_empl = count_employee.query('count_emp > 4')['managerId']    
   return employee.query('id in @min_5_empl')[['name']]
 ```
+
+## 607. Sales Person
+```python
+import pandas as pd
+
+def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
+  merged = pd.merge(orders, company, on='com_id')
+  result = sales_person[
+    ~sales_person['sales_id']\
+        .isin(
+            merged[merged['name'] == 'RED']['sales_id']
+        )
+    ]
+  
+  return result[['name']]
+```
