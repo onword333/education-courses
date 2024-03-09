@@ -1,5 +1,14 @@
 # 30 days of pandas
 
+## 595. Big Countries
+```python
+import pandas as pd
+
+def big_countries(world: pd.DataFrame) -> pd.DataFrame:
+  df = world.query('area >= 3000000 or population >= 25000000')
+  return df[['name', 'population', 'area']]
+```
+
 ## 1757. Recyclable and Low Fat Products
 ```python
 import pandas as pd
