@@ -1,5 +1,16 @@
 # 30 days of pandas
 
+## 1873. Calculate Special Bonus
+```python
+import pandas as pd
+
+def calculate_special_bonus(employees: pd.DataFrame) -> pd.DataFrame:
+  employees['bonus'] = 0
+  df = employees
+  df.loc[(df['employee_id'] % 2 > 0) & (~df['name'].str.startswith("M")), 'bonus'] = df['salary']
+  return df[['employee_id', 'bonus']].sort_values(by='employee_id')
+```
+
 ## 1667. Fix Names in a Table
 ```python
 import pandas as pd
