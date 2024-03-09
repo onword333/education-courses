@@ -1,5 +1,22 @@
 # 30 days of pandas
 
+## 184. Department Highest Salary
+```python
+import pandas as pd
+
+def department_highest_salary(employee: pd.DataFrame, department: pd.DataFrame) -> pd.DataFrame:
+    max_salary = employee.groupby(['departmentId'], as_index=False).agg({'salary':'max'})
+
+    dep_name = max_salary\
+      .merge(department, left_on='departmentId', right_on='id', how='left', suffixes=(None, '_dep'))\
+      .merge(employee, left_on=['departmentId', 'salary'], right_on=['departmentId', 'salary'], how='left', suffixes=(None, '_empl'))    
+
+    res = dep_name.drop(columns=['id', 'departmentId', 'id_empl'])\
+      .rename(columns={'name_empl':'Employee', 'name': 'Department', 'salary': 'Salary'})        
+            
+    return res[['Department', 'Employee', 'Salary']]
+```
+
 ## 178. Rank Scores
 ```python
 import pandas as pd
