@@ -346,6 +346,18 @@
                 "Year Quarter", "Q" & FORMAT ( [Date], "q" ) & "-" & YEAR ( [Date] )
             )
 
+### Выбранный диапазон дат
+    PM Range = 
+    CALCULATE (  
+        VAR MinDate = MIN ( 'Date'[Date] )
+        VAR MaxDate = MAX ( 'Date'[Date] )
+        VAR Result =
+            FORMAT ( MinDate, "MM/DD/YYYY - " ) & FORMAT ( MaxDate, "MM/DD/YYYY" )
+        RETURN
+            Result,
+        DATEADD ( 'Date'[Date], -1, MONTH )
+    )
+
 ### Получить выбранные значения в контексте фильтра
 Можно вывести значения которые возвращаются с учетом применения контекста фильтра. Например, ниже мера соединяет значения в строку:
 
