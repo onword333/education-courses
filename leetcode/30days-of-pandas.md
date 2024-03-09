@@ -1,5 +1,14 @@
 # 30 days of pandas
 
+## 1667. Fix Names in a Table
+```python
+import pandas as pd
+
+def fix_names(users: pd.DataFrame) -> pd.DataFrame:
+  users['name'] = users.name.str.capitalize()
+  return users.sort_values(by='user_id')
+```
+
 ## 1517. Find Users With Valid E-Mails
 ```python
 import pandas as pd
