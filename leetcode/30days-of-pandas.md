@@ -1,5 +1,14 @@
 # 30 days of pandas
 
+## 1757. Recyclable and Low Fat Products
+```python
+import pandas as pd
+
+def find_products(products: pd.DataFrame) -> pd.DataFrame:
+  df = products.query('low_fats == "Y" & recyclable == "Y"')  
+  return df[['product_id']]
+```
+
 ## 183. Customers Who Never Order
 ```python
 import pandas as pd
