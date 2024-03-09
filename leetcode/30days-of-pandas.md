@@ -1,5 +1,21 @@
 # 30 days of pandas
 
+## 177. Nth Highest Salary
+```python
+import pandas as pd
+
+def nth_highest_salary(employee: pd.DataFrame, N: int) -> pd.DataFrame:    
+  unique_salaries = employee.salary.unique()
+      
+  uniq = len(unique_salaries)
+  if N > uniq or N < 1:
+    return pd.DataFrame([np.NaN], columns=[f"getNthHighestSalary({N})"])
+  else:        
+    salary = sorted(unique_salaries, reverse=True)[N - 1]
+    return pd.DataFrame([salary], columns=[f"getNthHighestSalary({N})"])
+```
+
+
 ## 176. Second Highest Salary
 ```python
 import pandas as pd
