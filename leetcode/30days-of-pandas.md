@@ -1,5 +1,14 @@
 # 30 days of pandas
 
+## 1683. Invalid Tweets
+```python
+import pandas as pd
+
+def invalid_tweets(tweets: pd.DataFrame) -> pd.DataFrame:
+  df = tweets.query('content.str.len() > 15')
+  return df[['tweet_id']]
+```
+
 ## 1873. Calculate Special Bonus
 ```python
 import pandas as pd
