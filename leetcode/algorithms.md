@@ -106,3 +106,56 @@ class Solution:
 
     return ans
 ```
+
+## 1108. Defanging an IP Address
+[source](https://leetcode.com/problems/defanging-an-ip-address/description/)
+
+Given a valid (IPv4) IP address, return a defanged version of that IP address.
+
+A defanged IP address replaces every period "." with "[.]".
+
+```python
+class Solution:
+  def defangIPaddr(self, address: str) -> str:
+    return address.replace('.', '[.]')
+```
+
+## 1512. Number of Good Pairs
+[source](https://leetcode.com/problems/number-of-good-pairs/description/)
+
+Given an array of integers nums, return the number of good pairs.
+
+A pair (i, j) is called good if nums[i] == nums[j] and i < j.
+
+Вариант 1 c двумяя циклами
+```python
+class Solution:
+  def numIdenticalPairs(self, nums: List[int]) -> int:
+    nums_range = range(len(nums))
+
+    good_pairs = []
+
+    for i in nums_range:  
+      for j in nums_range:
+        if (nums[i] == nums[j] and i < j):
+          good_pairs.append([i, j])
+
+    return len(good_pairs)
+```
+
+Вариант 2 без с одним циклом
+```python
+class Solution:
+  def numIdenticalPairs(self, nums: List[int]) -> int:    
+    count = {}
+    good_pairs = 0
+
+    for num in nums:
+      if num in count:
+        good_pairs += count[num]
+        count[num] += 1
+      else:
+        count[num] = 1
+
+    return good_pairs
+```
