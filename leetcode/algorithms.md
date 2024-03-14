@@ -159,3 +159,25 @@ class Solution:
 
     return good_pairs
 ```
+
+## 1. Two Sum
+[source](https://leetcode.com/problems/number-of-good-pairs/description/)
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Можно решить эту проблему, используя dict для хранения индексов чисел при переборе массива. При переборе массива для каждого числа можно проверить, существует ли дополнение этого числа (цель - текущее число) в хеш-карте. Если это так, то мы нашли пару чисел, которые в сумме соответствуют цели.
+
+```python
+class Solution:
+  def twoSum(self, nums: List[int], target: int) -> List[int]:
+    num_indices = {}
+
+    for i, num in enumerate(nums):
+      complement = target - num
+      if complement in num_indices:
+        return [num_indices[complement], i]
+      
+      num_indices[num] = i
+```
