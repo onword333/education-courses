@@ -32,5 +32,31 @@ class Solution:
           return ""                     # возвращаем пустую строку
 
     return prefix
+```
 
+## 20. Valid Parentheses
+[promlem](https://leetcode.com/problems/valid-parentheses/description/)
+
+Эту проблему можно решить, используя структуру данных стека. Основная идея состоит в том, чтобы перебирать строку, помещая открывающие скобки в стек и извлекая их из стека всякий раз, когда встречается закрывающая скобка. Если в какой-либо момент закрывающая скобка не соответствует соответствующей открывающей скобке наверху стека или стек пуст при обнаружении закрывающей скобки, то строка недействительна.
+
+```python
+class Solution:
+  def isValid(self, s: str) -> bool:
+    stack = []
+    brackets = {
+      ')': '(', 
+      '}': '{', 
+      ']': '['
+    }
+
+    for char in s:
+      if char in brackets.values():
+        stack.append(char)
+      elif char in brackets.keys():
+        if not stack or brackets[char] != stack.pop():
+          return False
+      else:
+        return False
+
+    return not stack
 ```
