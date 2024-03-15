@@ -285,3 +285,40 @@ class Solution:
 
     return dummy.next
 ```
+
+## 26. Remove Duplicates from Sorted Array
+[source](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+
+Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+
+Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
+
+- Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums.
+- Return k.
+
+Constraints:
+
+- 1 <= nums.length <= 3 * 104
+- -100 <= nums[i] <= 100
+- nums is sorted in non-decreasing order.
+
+```python
+class Solution:
+  def removeDuplicates(self, nums: List[int]) -> int:
+    if not nums:
+      return 0
+    
+    # Инициализируем указатель для отслеживания позиции, 
+    # в которой должен быть размещен следующий уникальный элемент
+    unique_index = 1
+    
+    # перебираем элементы начиная со второго элемента
+    for i in range(1, len(nums)):
+      # если текущий элемент отличиается от предыдущего,
+      # то поместим его в позицию, указнную в unique_index
+      if nums[i] != nums[i - 1]:
+        nums[unique_index] = nums[i]
+        unique_index += 1
+    
+    return unique_index
+```
