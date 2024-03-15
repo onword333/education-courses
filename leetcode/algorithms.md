@@ -236,3 +236,52 @@ class Solution:
 
     return total
 ```
+
+## 21. Merge Two Sorted Lists
+[source](https://leetcode.com/problems/merge-two-sorted-lists/description/)
+
+You are given the heads of two sorted linked lists list1 and list2.
+
+Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+Return the head of the merged linked list.
+
+Constraints:
+
+- The number of nodes in both lists is in the range [0, 50].
+- -100 <= Node.val <= 100
+- Both list1 and list2 are sorted in non-decreasing order.
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+  def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+    # создадим фиктивный узел, который будет
+    # служить первым узлом в одно связанном списке
+    dummy = ListNode(0)
+
+    # указатель для дальнейшего перемещения по списку
+    cur = dummy
+
+    ## обходим одновременно два списка
+    while list1 and list2:    
+      # сортировка должна быть по возвр.
+      if list1.val < list2.val:
+        cur.next = list1
+        list1 = list1.next
+      else:
+        cur.next = list2
+        list2 = list2.next    
+      
+      cur = cur.next
+
+    # присоединяем оставшиеся ноды из list1 или list2
+    cur.next = list1 if list1 else list2
+
+    return dummy.next
+```
