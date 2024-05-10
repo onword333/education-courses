@@ -11,3 +11,10 @@
 
 - [roadmap github](https://github.com/datastacktv/data-engineer-roadmap)
 - [roadmap medium](https://medium.com/codex/how-to-become-a-data-engineer-905686dee7ce)
+
+Книги:
+
+- The Data Warehouse Toolkit, 3-d edition (Ralph Kimball, Margy Ross)
+- Build  the Data Warehouse, 4-d edition (William H. Inmon)
+- Pentaho Data Integration Beginner's Guide, 2-d edition (María Carina Roldan)
+- Pentaho Kettle Solutions, (Matt Costers, Roland Bouman, Jas van Dongen)
