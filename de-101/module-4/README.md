@@ -16,3 +16,10 @@
 
 ![Трансформация staging](./assets/my_stage_orders.jpg)
 ![Область staging в бд](./assets/db_stage.jpg)
+
+Создаем слой модели данных dw
+
+[Трансформация в dw](./assets/my_dim_tables.ktr)
+
+![Трансформация в dw](./assets/my_dim_tables.jpg)
+![Область dw в бд](./assets/db_dw.jpg)
