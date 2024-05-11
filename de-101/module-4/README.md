@@ -23,3 +23,9 @@
 
 ![Трансформация в dw](./assets/my_dim_tables.jpg)
 ![Область dw в бд](./assets/db_dw.jpg)
+
+Таблица фактов в слой dw
+
+[Трансформация в dw](./assets/my_gen_fact_table.ktr)
+
+![Трансформация в dw](./assets/my_gen_fact_table.jpg)
