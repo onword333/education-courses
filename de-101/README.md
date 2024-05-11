@@ -24,3 +24,8 @@
 Контакты:
 
 - Сергеев Константин (СМП Банк), skmwork@yandex.ru, [github pentaho di example](https://github.com/skmwork/smartdata-2022-pentaho)
+
+Собеседование, вопросы:
+
+- [Типы dimension](./module-4/README.md#data-delivery--12---special-dimension-builder)
+- [Как соединить таблицу фактов с таб измерений со связью \* : \*](./module-4/README.md#data-delivery--15---multy-valued-dimension-bridge-table-builder)
