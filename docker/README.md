@@ -33,6 +33,13 @@ docker exec -it my_cont bash
 - my_cont - название уже запущенного контейнра
 - bash - какую команду запустить после захода в контейнер
 
+### Интерактивное взаимодействие с контейнером
+```sh
+docker run -it image_name
+```
+Позволяет к примеру ввести значение через терминал для передачи его в программу контейнера
+![send_param_in_container](./assets/send_param_in_container.jpg)
+
 ### Удаление контейнера
 ```sh
 docker rm my_cont
