@@ -120,3 +120,31 @@ docker run -v /home/user/data:/data my_image
 ```sh
 docker run -v volume_name:/data my_image
 ```
+
+### Концепция Docker-in-Docker
+При помощи bind mount можно прокинуть сокет докера, в результате чего мы получим доступ к демону внутри контейнера.
+
+Такое может понадобиться, например, в CI/CD (про это поговорим в последнем уроке). Если кратко — нужно уметь внутри контейнера запускать, например, сборку образа (docker build).
+
+При этом такой подход довольно опасен, поэтому нужно быть очень аккуратным!
+
+Подробнее можно посмотреть вот тут:
+- [stackoverflow](https://stackoverflow.com/questions/35110146/what-is-the-purpose-of-the-file-docker-sock)
+- [оригинал статьи](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
+- [перевод статьи](https://habr.com/ru/companies/ua-hosting/articles/488536/)
+
+Для этого понадобится образ [докера](https://hub.docker.com/_/docker)
+
+А также нужно будет сделать bind mount как раз сокета:
+```sh
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock docker
+```
+
+На хосте остановите и удалите контейнер с редисом, если он у вас поднят (docker stop redis и docker rm redis). В общем чтоб у вас не было конфликта име
+
+Затем зайдите в этот контейнер и выполните команду 
+```sh
+docker run --rm -d --name redis redis
+```
+
+На хосте появится контейнер с именем redis
