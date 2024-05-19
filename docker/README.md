@@ -159,3 +159,10 @@ docker volume prune
 ```sh
  docker cp nginx:/etc/nginx/nginx.conf ./nginx.conf
 ```
+
+## Переменные окружения
+### Прокинуть переменные окружения в контейнер
+```sh
+docker run --rm -it --env-file ./.env ubuntu
+```
+В каталоге должен быть файл .env с переменными окружения в виде VAR_NAME=VALUE
