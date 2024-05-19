@@ -154,3 +154,8 @@ docker run --rm -d --name redis redis
 docker volume prune
 ```
 Удаляет все тома которые не используются в контейнерах, если volume используется в каком-нибудь контейнере, то он не будет удален
+
+### Скопировать файл из контейнера
+```sh
+ docker cp nginx:/etc/nginx/nginx.conf ./nginx.conf
+```
