@@ -184,10 +184,24 @@ docker logs lib 2>&1 | grep ERROR
 
 Просмотр всех логов контейнера
 ```sh
-docker logs my_container > logs.log		# вывод логов
-docker logs -f my_container > logs.log	# следовать за логами, не отключаться
-docker logs -t my_container > logs.log	# добавить время к логам
+# вывод логов
+docker logs my_container > logs.log
+
+# следовать за логами, не отключаться
+docker logs -f my_container > logs.log
+
+# добавить время к логам
+docker logs -t my_container > logs.log
+
+# подсчет кол-ва строк
+cat logs.log | wc -l
 ```
-
-
 [Дополнительно](https://docs.docker.com/config/containers/logging/)
+
+## Порты
+```sh
+docker run -p <порт_на_хосте>:<порт_в_контейнере> img_name
+```
+связывает порт внутри контейнера с портом на хосте.
+
+EXPOSE - инструкция в Dockerfile, которая позволяет сообщить пользователю, какой(ие) порт(ы) слушает приложение внутри контейнера. Не прокидывает порты на хост
