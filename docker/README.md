@@ -166,3 +166,28 @@ docker volume prune
 docker run --rm -it --env-file ./.env ubuntu
 ```
 В каталоге должен быть файл .env с переменными окружения в виде VAR_NAME=VALUE
+
+## Логи
+Логи могут записываться в стандартный поток вывода(stdout) и в стандартный поток ошибок(stderror). Необходимо это учитывать при просмотре логов с помощью grep, head, tail. Эти команды ловят стандартный поток вывода.
+
+Вывод 5 логов, если они писались в stderror и в stdout - то все равно выведется все.
+```sh
+docker logs lib | head -n 5
+```
+
+Чтобы исправить это, необходимо перенаправить stderror в stdout для команд head, tail, grep
+```sh
+docker logs lib 2>&1 | grep ERROR
+# 2> - стандартный поток ошибок(stderror)
+# &1 - стандартный поток вывода(stdout)
+```
+
+Просмотр всех логов контейнера
+```sh
+docker logs my_container > logs.log		# вывод логов
+docker logs -f my_container > logs.log	# следовать за логами, не отключаться
+docker logs -t my_container > logs.log	# добавить время к логам
+```
+
+
+[Дополнительно](https://docs.docker.com/config/containers/logging/)
