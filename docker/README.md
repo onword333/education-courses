@@ -34,6 +34,7 @@
     - [Кастомные сети](#кастомные-сети)
   - [Docker compose, yaml файл](#docker-compose-yaml-файл)
     - [Запуск сервисов](#запуск-сервисов)
+    - [Зависимости](#зависимости)
 
 
 # Docker
@@ -403,3 +404,38 @@ docker-compose stop # остановить поднятые контейнеры
 docker-compose start # запустить остановленные контейнеры
 docker-compose down # остановить и удалить контейнеры и сеть
 ```
+
+### Зависимости
+depends_on - используется для определения порядка запуска контейнеров в составе одного docker-compose файла. Это позволяет указать, что один контейнер должен быть запущен до другого. 
+
+Пример:
+```yaml
+version: '3'
+
+services:
+  database:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: "todo_list"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+    volumes:
+      - "postgres:/var/lib/postgresql/data"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready
+        - -U
+        - admin
+  
+  create-table:
+    image: postgres:14
+    command: bash -c 'PGPASSWORD=admin psql -U admin --dbname todo_list -p 5432 -h database -c "CREATE TABLE IF NOT EXISTS user_table (user_id int PRIMARY KEY, username varchar(256), email varchar(256));"'
+    depends_on:
+      database:
+        condition: service_healthy
+
+volumes:
+  postgres:
+```
+healthcheck: Определяет, как проверять готовность сервиса. В данном примере используется команда pg_isready для проверки готовности PostgreSQL.
