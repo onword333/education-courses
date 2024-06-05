@@ -1115,3 +1115,45 @@ The result format is in the following example.
     User 14 did not login in 2020, so we do not include them in the result table.
 
 [Solution](./assets/1890.sql)
+
+## 1965. Employees With Missing Information
+Write a solution to report the IDs of all the employees with missing information. The information of an employee is missing if:
+
+The employee's name is missing, or
+The employee's salary is missing.
+Return the result table ordered by employee_id in ascending order.
+
+The result format is in the following example.
+
+    Example 1:
+
+    Input: 
+    Employees table:
+    +-------------+----------+
+    | employee_id | name     |
+    +-------------+----------+
+    | 2           | Crew     |
+    | 4           | Haven    |
+    | 5           | Kristian |
+    +-------------+----------+
+    Salaries table:
+    +-------------+--------+
+    | employee_id | salary |
+    +-------------+--------+
+    | 5           | 76071  |
+    | 1           | 22517  |
+    | 4           | 63539  |
+    +-------------+--------+
+    Output: 
+    +-------------+
+    | employee_id |
+    +-------------+
+    | 1           |
+    | 2           |
+    +-------------+
+    Explanation: 
+    Employees 1, 2, 4, and 5 are working at this company.
+    The name of employee 1 is missing.
+    The salary of employee 2 is missing.
+
+[Solution](./assets/1965.sql)
