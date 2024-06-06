@@ -1192,3 +1192,35 @@ The result format is in the following example.
     Joziah's manager is employee 6, who left the company because there is no row for employee 6 as it was deleted.
 
 [Solution](./assets/1978.sql)
+
+## 180. Consecutive Numbers
+Find all numbers that appear at least three times consecutively.
+
+Return the result table in any order.
+
+The result format is in the following example.
+
+    Example 1:
+
+    Input: 
+    Logs table:
+    +----+-----+
+    | id | num |
+    +----+-----+
+    | 1  | 1   |
+    | 2  | 1   |
+    | 3  | 1   |
+    | 4  | 2   |
+    | 5  | 1   |
+    | 6  | 2   |
+    | 7  | 2   |
+    +----+-----+
+    Output: 
+    +-----------------+
+    | ConsecutiveNums |
+    +-----------------+
+    | 1               |
+    +-----------------+
+    Explanation: 1 is the only number that appears consecutively for at least three times.
+
+[Solution](./assets/180.sql)
