@@ -1420,3 +1420,86 @@ Example 1:
     Note that if the number of students is odd, there is no need to change the last one's seat.
 
 [Solution](./assets/626.sql)
+
+## 1158. Market Analysis I
+Write a solution to find for each user, the join date and the number of orders they made as a buyer in 2019.
+
+Return the result table in any order.
+
+The result format is in the following example.
+
+Example 1:
+
+    Input: 
+    Users table:
+    +---------+------------+----------------+
+    | user_id | join_date  | favorite_brand |
+    +---------+------------+----------------+
+    | 1       | 2018-01-01 | Lenovo         |
+    | 2       | 2018-02-09 | Samsung        |
+    | 3       | 2018-01-19 | LG             |
+    | 4       | 2018-05-21 | HP             |
+    +---------+------------+----------------+
+    Orders table:
+    +----------+------------+---------+----------+-----------+
+    | order_id | order_date | item_id | buyer_id | seller_id |
+    +----------+------------+---------+----------+-----------+
+    | 1        | 2019-08-01 | 4       | 1        | 2         |
+    | 2        | 2018-08-02 | 2       | 1        | 3         |
+    | 3        | 2019-08-03 | 3       | 2        | 3         |
+    | 4        | 2018-08-04 | 1       | 4        | 2         |
+    | 5        | 2018-08-04 | 1       | 3        | 4         |
+    | 6        | 2019-08-05 | 2       | 2        | 4         |
+    +----------+------------+---------+----------+-----------+
+    Items table:
+    +---------+------------+
+    | item_id | item_brand |
+    +---------+------------+
+    | 1       | Samsung    |
+    | 2       | Lenovo     |
+    | 3       | LG         |
+    | 4       | HP         |
+    +---------+------------+
+    Output: 
+    +-----------+------------+----------------+
+    | buyer_id  | join_date  | orders_in_2019 |
+    +-----------+------------+----------------+
+    | 1         | 2018-01-01 | 1              |
+    | 2         | 2018-02-09 | 2              |
+    | 3         | 2018-01-19 | 0              |
+    | 4         | 2018-05-21 | 0              |
+    +-----------+------------+----------------+
+
+[Solution](./assets/1158.sql)
+
+## 1164. Product Price at a Given Date
+Write a solution to find the prices of all products on 2019-08-16. Assume the price of all products before any change is 10.
+
+Return the result table in any order.
+
+The result format is in the following example.
+
+Example 1:
+
+    Input: 
+    Products table:
+    +------------+-----------+-------------+
+    | product_id | new_price | change_date |
+    +------------+-----------+-------------+
+    | 1          | 20        | 2019-08-14  |
+    | 2          | 50        | 2019-08-14  |
+    | 1          | 30        | 2019-08-15  |
+    | 1          | 35        | 2019-08-16  |
+    | 2          | 65        | 2019-08-17  |
+    | 3          | 20        | 2019-08-18  |
+    +------------+-----------+-------------+
+    Output: 
+    +------------+-------+
+    | product_id | price |
+    +------------+-------+
+    | 2          | 50    |
+    | 1          | 35    |
+    | 3          | 10    |
+    +------------+-------+
+
+[Solution](./assets/1164.sql)
