@@ -27,6 +27,7 @@
 - [AirFlow курс "Школа больших данных"](https://www.youtube.com/watch?v=55D9Eu7mUW0&list=PL1nFVl41dGiVyk-yCErOUuEdIe9tCb-u5&index=1)
 - [Настраиваем конфигурацию DAG в Apache Airflow так, чтобы меньше о ней думать](https://tprg.ru/Qz7M)
 - [Как решить проблемы оркестрации сотен задач по обработке данных с помощью Apache Airflow](https://www.youtube.com/watch?v=B2edNXaChyU)
+- [Coursera Специализация Data Engineering, Big Data, and Machine Learning on GCP](https://www.coursera.org/specializations/gcp-data-machine-learning?action=enroll)
 
 Контакты:
 
