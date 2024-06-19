@@ -1219,3 +1219,60 @@ Example 1:
 [Solution](./assets/algorithms/219.py)
 
 PS: Иными словами, мы ищем пару элементов с одинаковыми значениями, которые находятся на расстоянии не более k друг от друга. Если такая пара существует, возвращаем True, иначе возвращаем False.
+
+## 228. Summary Ranges
+You are given a sorted unique integer array nums.
+
+A range [a,b] is the set of all integers from a to b (inclusive).
+
+Return the smallest sorted list of ranges that cover all the numbers in the array exactly. That is, each element of nums is covered by exactly one of the ranges, and there is no integer x such that x is in one of the ranges but not in nums.
+
+Each range [a,b] in the list should be output as:
+
+    "a->b" if a != b
+    "a" if a == b
+ 
+
+Example 1:
+
+    Input: nums = [0,1,2,4,5,7]
+    Output: ["0->2","4->5","7"]
+    Explanation: The ranges are:
+    [0,2] --> "0->2"
+    [4,5] --> "4->5"
+    [7,7] --> "7"
+
+Example 2:
+
+    Input: nums = [0,2,3,4,6,8,9]
+    Output: ["0","2->4","6","8->9"]
+    Explanation: The ranges are:
+    [0,0] --> "0"
+    [2,4] --> "2->4"
+    [6,6] --> "6"
+    [8,9] --> "8->9"
+
+[Solution](./assets/algorithms/228.py)
+
+## 231. Power of Two
+Given an integer n, return true if it is a power of two. Otherwise, return false.
+
+An integer n is a power of two, if there exists an integer x such that n == 2x.
+
+Example 1:
+    Input: n = 1
+    Output: true
+    Explanation: 20 = 1
+
+Example 2:
+
+    Input: n = 16
+    Output: true
+    Explanation: 24 = 16
+
+Example 3:
+
+    Input: n = 3
+    Output: false
+
+[Solution](./assets/algorithms/231.py)

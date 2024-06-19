@@ -1,5 +1,5 @@
 """
-228. Summary Ranges
+231. Power of Two
 """
 
 
