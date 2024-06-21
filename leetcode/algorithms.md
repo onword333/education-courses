@@ -1326,3 +1326,25 @@ Example 2:
     Output: false
 
 [Solution](./assets/algorithms/242.py)
+
+## 258. Add Digits
+Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.
+
+Example 1:
+
+    Input: num = 38
+    Output: 2
+    Explanation: The process is
+    38 --> 3 + 8 --> 11
+    11 --> 1 + 1 --> 2 
+    Since 2 has only one digit, return it.
+
+Example 2:
+
+    Input: num = 0
+    Output: 0
+
+
+[Solution](./assets/algorithms/258.py)
+
+P.S.: Для решения этой задачи есть несколько подходов, но один из самых эффективных использует математическое свойство, известное как "цифровой корень" (digital root). Это свойство позволяет быстро найти результат без необходимости многократного сложения цифр.
