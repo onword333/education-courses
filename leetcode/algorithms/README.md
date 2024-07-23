@@ -1,3 +1,5 @@
+[back](../README.md)
+
 # Алгоритмы
 
 ## 9. Palindrome Number
@@ -960,7 +962,7 @@ Example 2:
     Output: 0
     Explanation: In this case, no transactions are done and the max profit = 0.
 
-[Solution](./assets/algorithms/121.py)
+[Solution](./121.py)
 
 ## 125. Valid Palindrome
 A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
@@ -989,7 +991,7 @@ Example 3:
     Since an empty string reads the same forward and backward, it is a palindrome.
  
 
-[Solution](./assets/algorithms/125.py)
+[Solution](./125.py)
 
 ## 136. Single Number
 Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
@@ -1008,7 +1010,7 @@ You must implement a solution with a linear runtime complexity and use only cons
     Input: nums = [1]
     Output: 1
 
-[Solution](./assets/algorithms/136.py)
+[Solution](./136.py)
 
 ## 168. Excel Sheet Column Title
 Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet.
@@ -1036,7 +1038,7 @@ For example:
     Input: columnNumber = 701
     Output: "ZY"
 
-[Solution](./assets/algorithms/168.py)
+[Solution](./168.py)
 
 ## 169. Majority Element
 Given an array nums of size n, return the majority element.
@@ -1053,7 +1055,7 @@ The majority element is the element that appears more than ⌊n / 2⌋ times. Yo
 
 Follow-up: Could you solve the problem in linear time and in O(1) space?
 
-[Solution](./assets/algorithms/169.py)
+[Solution](./169.py)
 
 ## 171. Excel Sheet Column Number
 Given a string columnTitle that represents the column title as appears in an Excel sheet, return its corresponding column number.
@@ -1106,7 +1108,7 @@ Constraints:
 
 The input must be a binary string of length 32
 
-[Solution](./assets/algorithms/190.py)
+[Solution](./190.py)
 
 ## 191. Number of 1 Bits
 Write a function that takes the binary representation of a positive integer and returns the number of set bits it has (also known as the Hamming weight).
@@ -1130,7 +1132,7 @@ Write a function that takes the binary representation of a positive integer and 
     Explanation:
     The input binary string 1111111111111111111111111111101 has a total of thirty set bits.
 
-[Solution](./assets/algorithms/191.py)
+[Solution](./191.py)
 
 ## 202. Happy Number
 Write an algorithm to determine if a number n is happy.
@@ -1156,7 +1158,7 @@ Return true if n is a happy number, and false if not.
     Input: n = 2
     Output: false
 
-[Solution](./assets/algorithms/202.py)
+[Solution](./202.py)
 
 ## 205. Isomorphic Strings
 Given two strings s and t, determine if they are isomorphic.
@@ -1178,7 +1180,7 @@ Example 1:
     Input: s = "paper", t = "title"
     Output: true
 
-[Solution](./assets/algorithms/205.py)
+[Solution](./205.py)
 
 ## 217. Contains Duplicate
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
@@ -1196,7 +1198,7 @@ Example 1:
     Input: nums = [1,1,1,3,3,4,3,2,4,2]
     Output: true
  
-[Solution](./assets/algorithms/217.py)
+[Solution](./217.py)
 
 ## 219. Contains Duplicate II
 Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.
@@ -1216,7 +1218,7 @@ Example 1:
     Input: nums = [1,2,3,1,2,3], k = 2
     Output: false
 
-[Solution](./assets/algorithms/219.py)
+[Solution](./219.py)
 
 PS: Иными словами, мы ищем пару элементов с одинаковыми значениями, которые находятся на расстоянии не более k друг от друга. Если такая пара существует, возвращаем True, иначе возвращаем False.
 
@@ -1252,7 +1254,7 @@ Example 2:
     [6,6] --> "6"
     [8,9] --> "8->9"
 
-[Solution](./assets/algorithms/228.py)
+[Solution](./228.py)
 
 ## 231. Power of Two
 Given an integer n, return true if it is a power of two. Otherwise, return false.
@@ -1275,7 +1277,7 @@ Example 3:
     Input: n = 3
     Output: false
 
-[Solution](./assets/algorithms/231.py)
+[Solution](./231.py)
 
 ## 232. Implement Queue using Stacks
 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
@@ -1308,7 +1310,7 @@ Example 1:
     myQueue.pop(); // return 1, queue is [2]
     myQueue.empty(); // return false
 
-[Solution](./assets/algorithms/232.py)
+[Solution](./232.py)
 
 ## 242. Valid Anagram
 Given two strings s and t, return true if t is an anagram of s, and false otherwise.
@@ -1325,7 +1327,7 @@ Example 2:
     Input: s = "rat", t = "car"
     Output: false
 
-[Solution](./assets/algorithms/242.py)
+[Solution](./242.py)
 
 ## 258. Add Digits
 Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.
@@ -1345,7 +1347,7 @@ Example 2:
     Output: 0
 
 
-[Solution](./assets/algorithms/258.py)
+[Solution](./258.py)
 
 P.S.: Для решения этой задачи есть несколько подходов, но один из самых эффективных использует математическое свойство, известное как "цифровой корень" (digital root). Это свойство позволяет быстро найти результат без необходимости многократного сложения цифр.
 
@@ -1372,7 +1374,7 @@ Example 3:
     Output: false
     Explanation: 14 is not ugly since it includes the prime factor 7.
 
-[Solution](./assets/algorithms/263.py)
+[Solution](./263.py)
 
 ## 268. Missing Number
 Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
@@ -1395,7 +1397,7 @@ Example 3:
     Output: 8
     Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
 
-[Solution](./assets/algorithms/268.py)
+[Solution](./268.py)
 
 P.S.: Чтобы решить задачу нахождения пропущенного числа в массиве различных чисел в
 диапазоне [0, 𝑛], можно использовать математический подход, который использует
@@ -1422,7 +1424,7 @@ Example 2:
     Input: nums = [0]
     Output: [0]
 
-[Solution](./assets/algorithms/283.py)
+[Solution](./283.py)
 
 ## 278. First Bad Version
 You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
@@ -1446,7 +1448,7 @@ Example 2:
     Input: n = 1, bad = 1
     Output: 1
 
-[Solution](./assets/algorithms/278.py)
+[Solution](./278.py)
 
 ## 290. Word Pattern
 Given a pattern and a string s, find if s follows the same pattern.
@@ -1468,7 +1470,7 @@ Example 3:
     Input: pattern = "aaaa", s = "dog cat cat dog"
     Output: false
 
-[Solution](./assets/algorithms/290.py)
+[Solution](./290.py)
 
 
 ## 292. Nim Game
@@ -1502,7 +1504,7 @@ Example 3:
     Input: n = 2
     Output: true
 
-[Solution](./assets/algorithms/292.py)
+[Solution](./292.py)
 
 P.S.: Ним — это игра в теории игр, где два игрока поочередно берут от 1 до 3 камней из кучки, и тот, кто берет последний камень, выигрывает
 
@@ -1531,7 +1533,7 @@ Example 1:
     numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
 
 
-[Solution](./assets/algorithms/303.py)
+[Solution](./303.py)
 
 ## 326. Power of Three
 Given an integer n, return true if it is a power of three. Otherwise, return false.
@@ -1556,7 +1558,7 @@ Example 3:
     Output: false
     Explanation: There is no x where 3x = (-1).
 
-[Solution](./assets/algorithms/326.py)
+[Solution](./326.py)
 
 ## 338. Counting Bits
 Given an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.
@@ -1582,7 +1584,7 @@ Example 2:
     4 --> 100
     5 --> 101
 
-[Solution](./assets/algorithms/338.py)
+[Solution](./338.py)
 
 ## 342. Power of Four
 Given an integer n, return true if it is a power of four. Otherwise, return false.
@@ -1604,7 +1606,7 @@ Example 3:
     Input: n = 1
     Output: true
 
-[Solution](./assets/algorithms/342.py)
+[Solution](./342.py)
 
 ## 344. Reverse String
 Write a function that reverses a string. The input string is given as an array of characters s.
@@ -1621,7 +1623,7 @@ Example 2:
     Input: s = ["H","a","n","n","a","h"]
     Output: ["h","a","n","n","a","H"]
 
-[Solution](./assets/algorithms/344.py)
+[Solution](./344.py)
 
 ## 345. Reverse Vowels of a String
 Given a string s, reverse only all the vowels in the string and return it.
@@ -1638,7 +1640,7 @@ Example 2:
     Input: s = "leetcode"
     Output: "leotcede"
 
-[Solution](./assets/algorithms/344.py)
+[Solution](./344.py)
 
 ## 349. Intersection of Two Arrays
 Given two integer arrays nums1 and nums2, return an array of their 
@@ -1656,7 +1658,7 @@ Example 2:
     Output: [9,4]
     Explanation: [4,9] is also accepted.
 
-[Solution](./assets/algorithms/349.py)
+[Solution](./349.py)
 
 ## 350. Intersection of Two Arrays II
 Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
@@ -1673,7 +1675,7 @@ Example 2:
     Explanation: [9,4] is also accepted.
 
 
-[Solution](./assets/algorithms/350.py)
+[Solution](./350.py)
 
 ## 367. Valid Perfect Square
 Given a positive integer num, return true if num is a perfect square or false otherwise.
@@ -1694,7 +1696,7 @@ Example 2:
     Output: false
     Explanation: We return false because 3.742 * 3.742 = 14 and 3.742 is not an integer.
 
-[Solution](./assets/algorithms/367.py)
+[Solution](./367.py)
 
 ## 374. Guess Number Higher or Lower
 We are playing the Guess Game. The game is as follows:
@@ -1726,7 +1728,7 @@ Example 3:
     Input: n = 2, pick = 1
     Output: 1
 
-[Solution](./assets/algorithms/367.py)
+[Solution](./367.py)
 
 P.S.: Решать будем с помощью бинарного поиска
 
@@ -1750,7 +1752,7 @@ Example 3:
     Input: ransomNote = "aa", magazine = "aab"
     Output: true
 
-[Solution](./assets/algorithms/383.py)
+[Solution](./383.py)
 
 ## 387. First Unique Character in a String
 Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
@@ -1770,7 +1772,7 @@ Example 3:
     Input: s = "aabb"
     Output: -1
 
-[Solution](./assets/algorithms/387.py)
+[Solution](./387.py)
 
 ## 389. Find the Difference
 You are given two strings s and t.
@@ -1790,7 +1792,7 @@ Example 2:
     Input: s = "", t = "y"
     Output: "y"
 
-[Solution](./assets/algorithms/389.py)
+[Solution](./389.py)
 
 ## 392. Is Subsequence
 Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
@@ -1807,7 +1809,7 @@ Example 2:
     Input: s = "axc", t = "ahbgdc"
     Output: false
 
-[Solution](./assets/algorithms/392.py)
+[Solution](./392.py)
 
 
 ## 412. Fizz Buzz
@@ -1833,7 +1835,7 @@ Example 3:
     Input: n = 15
     Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
 
-[Solution](./assets/algorithms/412.py)
+[Solution](./412.py)
 
 ## 414. Third Maximum Number
 Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number.
@@ -1865,7 +1867,7 @@ Example 3:
     The second distinct maximum is 2 (both 2's are counted together since they have the same value).
     The third distinct maximum is 1.
 
-[Solution](./assets/algorithms/414.py)
+[Solution](./414.py)
 
 ## 415. Third Maximum Number
 Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
@@ -1887,7 +1889,7 @@ Example 3:
     Input: num1 = "0", num2 = "0"
     Output: "0"
 
-[Solution](./assets/algorithms/415.py)
+[Solution](./415.py)
 
 ## 434. Number of Segments in a String
 Given a string s, return the number of segments in the string.
@@ -1905,7 +1907,7 @@ Example 2:
     Input: s = "Hello"
     Output: 1
 
-[Solution](./assets/algorithms/434.py)
+[Solution](./434.py)
 
 ## 441. Arranging Coins
 You have n coins and you want to build a staircase with these coins. The staircase consists of k rows where the ith row has exactly i coins. The last row of the staircase may be incomplete.
@@ -1928,7 +1930,7 @@ Example 2:
     Output: 3
     Explanation: Because the 4th row is incomplete, we return 3.
 
-[Solution](./assets/algorithms/441.py)
+[Solution](./441.py)
 
 ## 448. Find All Numbers Disappeared in an Array
 Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
@@ -1943,7 +1945,7 @@ Example 2:
     Input: nums = [1,1]
     Output: [2]
 
-[Solution](./assets/algorithms/448.py)
+[Solution](./448.py)
 
 ## 455. Assign Cookies
 Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie.
@@ -1966,7 +1968,7 @@ Example 2:
     You have 3 cookies and their sizes are big enough to gratify all of the children, 
     You need to output 2.
 
-[Solution](./assets/algorithms/455.py)
+[Solution](./455.py)
 
 ## 459. Repeated Substring Pattern
 Given a string s, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.
@@ -1988,7 +1990,7 @@ Example 3:
     Output: true
     Explanation: It is the substring "abc" four times or the substring "abcabc" twice.
 
-[Solution](./assets/algorithms/459.py)
+[Solution](./459.py)
 
 ## 463. Island Perimeter
 You are given row x col grid representing a map where grid[i][j] = 1 represents land and grid[i][j] = 0 represents water.
@@ -2014,7 +2016,7 @@ Example 3:
 
     Input: grid = [[1,0]]
     Output: 4
-[Solution](./assets/algorithms/463.py)
+[Solution](./463.py)
 
 ## 476. Number Complement
 The complement of an integer is the integer you get when you flip all the 0's to 1's and all the 1's to 0's in its binary representation.
@@ -2034,7 +2036,7 @@ Example 2:
     Output: 0
     Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
 
-[Solution](./assets/algorithms/471.py)
+[Solution](./471.py)
 
 ## 482. License Key Formatting
 You are given a license key represented as a string s that consists of only alphanumeric characters and dashes. The string is separated into n + 1 groups by n dashes. You are also given an integer k.
@@ -2056,7 +2058,7 @@ Example 2:
     Output: "2-5G-3J"
     Explanation: The string s has been split into three parts, each part has 2 characters except the first part as it could be shorter as mentioned above.
 
-[Solution](./assets/algorithms/482.py)
+[Solution](./482.py)
 
 ## 485. Max Consecutive Ones
 Given a binary array nums, return the maximum number of consecutive 1's in the array.
@@ -2072,4 +2074,4 @@ Example 2:
     Input: nums = [1,0,1,1,0,1]
     Output: 2
 
-[Solution](./assets/algorithms/485.py)
+[Solution](./485.py)
