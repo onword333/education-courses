@@ -2155,3 +2155,33 @@ Example 2:
     Explanation: The next greater element for each value of nums1 is as follows:
     - 2 is underlined in nums2 = [1,2,3,4]. The next greater element is 3.
     - 4 is underlined in nums2 = [1,2,3,4]. There is no next greater element, so the answer is -1.
+
+[Solution](./496.py)
+
+## 500. Keyboard Row
+Given an array of strings words, return the words that can be typed using letters of the alphabet on only one row of American keyboard like the image below.
+
+In the American keyboard:
+
+- the first row consists of the characters "qwertyuiop",
+- the second row consists of the characters "asdfghjkl", and
+- the third row consists of the characters "zxcvbnm".
+
+![](./assets/keyboard.png)
+
+Example 1:
+
+    Input: words = ["Hello","Alaska","Dad","Peace"]
+    Output: ["Alaska","Dad"]
+
+Example 2:
+
+    Input: words = ["omk"]
+    Output: []
+
+Example 3:
+
+    Input: words = ["adsdf","sfd"]
+    Output: ["adsdf","sfd"]
+
+[Solution](./500.py)
